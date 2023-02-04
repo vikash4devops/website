@@ -11,7 +11,7 @@ pipeline{
                     sh "echo hello"
                 }
             }
-            //===================
+            
 
             stage('code build'){
                 steps{
@@ -23,3 +23,7 @@ pipeline{
                 steps{
                     sh "echo code deployed "
                 }
+            }
+    }
+
+}
