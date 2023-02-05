@@ -15,19 +15,8 @@ pipeline{
                    
                 }
             }
-            
 
-            stage('code build'){
-                steps{
-                    sh "echo ${NAME} "
-                }
-            }
-
-            stage('code deploy'){
-                steps{
-                    sh "echo code deployed "
-                }
-            }
+           
     }
 
 }
