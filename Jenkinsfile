@@ -6,9 +6,13 @@ pipeline{
     }
 
     stages{
-            stage('code clone'){
+            stage('code deploy'){
                 steps{
-                    sh "echo hello"
+                       withCredentials([sshUserPrivateKey(credentialsId: 'webserver', keyFileVariable: 'MY-KEY')]) {
+                             sh "ansible-playbook Playbook.yaml -i Inventory.txt"
+                        } 
+
+                   
                 }
             }
             
