@@ -8,5 +8,5 @@
         state: absent
     - name: copy files in webserver
       copy:
-        src: '{{ src_path }}'
+        src: '{{src_path}}/' #/var/www/
         dest: /var/www/html/ 
