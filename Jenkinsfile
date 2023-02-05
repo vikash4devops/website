@@ -8,11 +8,7 @@ pipeline{
     stages{
             stage('code deploy'){
                 steps{
-                       withCredentials([sshUserPrivateKey(credentialsId: 'webserver', keyFileVariable: 'MY-KEY')]) {
-                             sh "ansible-playbook Playbook.yaml -i inventory.txt"
-                        } 
-
-                   
+                       ansiblePlaybook credentialsId: 'webserver', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.txt', playbook: 'Playbook.yaml'
                 }
             }
 
