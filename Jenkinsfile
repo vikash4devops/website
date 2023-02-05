@@ -8,7 +8,7 @@ pipeline{
 
     stages{
 
-            stage(){
+            stage('src path print'){
                 steps{
                     sh 'echo $WORKSPACE'
                 }
