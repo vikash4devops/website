@@ -1,0 +1,12 @@
+- name: deploye website
+  hosts: all
+  become: true
+  tasks:
+    - name: delete old files
+      file:
+        path: /var/www/html/
+        state: absent
+    - name: copy files in webserver
+      copy:
+        src: /media/vikash/86A091E5A091DC4D/Devops/webapp/
+        dest: /var/www/html/ 
