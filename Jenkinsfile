@@ -8,7 +8,7 @@ pipeline{
     stages{
             stage('code deploy'){
                 steps{
-                       ansiblePlaybook credentialsId: 'webserver', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.txt', playbook: 'Playbook.yaml'
+                       ansiblePlaybook credentialsId: 'webserver', disableHostKeyChecking: true,extras: '-e src_path=$WORKSPACE', installation: 'ansible', inventory: 'inventory.txt', playbook: 'Playbook.yaml'
                 }
             }
 

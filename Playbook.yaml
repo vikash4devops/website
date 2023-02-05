@@ -8,5 +8,5 @@
         state: absent
     - name: copy files in webserver
       copy:
-        src: /media/vikash/86A091E5A091DC4D/Devops/webapp/
+        src: '{{ src_path }}'
         dest: /var/www/html/ 
